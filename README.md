@@ -20,15 +20,13 @@ You’ll get extra points for:
 -  [x] Implementing well-known project structure. (DDD is preferred but you can also use another one)
 -  [x] Logger and standarized response with requestId - your every endpoint response should have similar structure but different payload
 
-## Installation
+## Basic usage
 
 ### Install dependencies
 
 ```bash
 $ npm install
 ```
-
-## Running the app
 
 ### Create configuration file
 
@@ -40,4 +38,20 @@ $ echo "AUTH_USER=...\nAUTH_PASSWORD=..." > .env
 
 ```bash
 $ npm run start
+```
+
+## Alternative usage
+
+Alternatively, you can run the app using Docker.
+
+### Build image
+
+```bash
+$ docker build -t sewek/user-service .
+```
+
+### Run
+
+```bash
+$ docker run --rm -p 3000:3000 -e PORT=3000 -e AUTH_USER=... -e AUTH_PASS=... sewek/user-service
 ```
